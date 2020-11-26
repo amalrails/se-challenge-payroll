@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_11_26_000136) do
 
   create_table "employees", force: :cascade do |t|
-    t.string "name", limit: 10
+    t.string "employee_id", limit: 10
     t.integer "job_group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

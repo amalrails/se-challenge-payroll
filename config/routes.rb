@@ -6,8 +6,7 @@ Rails.application.routes.draw do
     collection do
       get 'home'
       post 'import'
-      post 'generate_payroll_report'
+      get 'generate_payroll_report'
     end
   end
 end
-
