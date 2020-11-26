@@ -13,3 +13,218 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+footer { margin-top: 100px; }
+table {
+    width: 100%;
+    vertical-align: middle;
+    border: #ff7fae;
+    text-align: center;
+}
+.table a {
+  color: #000000;
+}
+td, th {
+    width: auto;
+    padding: 1%;
+}
+th { border-bottom: 1px solid #DDD; }
+body { margin: 0; }
+
+.navbar-brand {
+    float: left;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    height: 25px;
+    padding: 10px 10px;
+    font-size: 28px;
+    line-height: 25px;
+    margin-left: -15px;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration-line: underline;
+}
+
+.bg-primary {
+    background-color: #011a2f;
+}
+
+.navbar-brand:hover {
+ color: #ffffff;
+ background-color: transparent;
+ text-decoration-line: underline;
+}
+
+
+footer {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 100px;
+    text-decoration-line: underline;
+}
+
+a {
+    color: #FFD700;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+
+/*body {
+content: "";
+background: url(../assets/nfl.jpg);
+opacity: 0.5;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+position: absolute;
+z-index: -1;
+}*/
+
+.footer:hover {
+  color: #FFD700;
+}
+
+.search {
+    width: fit-content;
+    border: #ff7fae;
+    padding: 0%;
+}
+
+.search .btn-primary {
+    margin-top: 10%;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #022a4c;
+    border-color: #2e6da4;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #022a4c;
+    border-color: #2e6da4;
+}
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus,
+  .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #022a4c;
+    border-color: #337ab7;
+}
+
+.search .form-control {
+  margin-top: 10%;
+}
+
+.search .form-group a{
+  color: #ffffff;
+}
+
+.search .btn-default {
+    margin-top: 10%;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  padding-bottom:90px;
+}
+body {
+  margin-bottom: 90px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+.footer a{
+  float: left;
+  height: 10px;
+  padding: 10px 10px;
+  line-height: 5px;
+  margin-left: -15px;
+  font-style: italic;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+footer {
+  background-color: #011a2f;
+  padding: 20px 0;
+}
+
+.table-hover tbody tr:hover td {
+  background: #EEE8AA;
+}
+
+.column {
+  margin: 5px;
+}
+
+.new_width {
+  margin-top: 1.2%;
+}
+
+.export a {
+  color: #fff;
+}
+
+.pagination {
+  background: white;
+  cursor: default;
+  height: 22px;
+  a, span, em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+  }
+  .disabled {
+    color: #999999;
+    border: 1px solid #dddddd;
+    display: none;
+  }
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1;
+  }
+  a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #9aafe5;
+    &:hover, &:focus {
+      color: #000033;
+      border-color: #000033;
+    }
+  }
+  .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center;
+    b {
+      color: #000033;
+      background: #2e6ab1 + 60;
+      padding: 0.1em 0.25em;
+    }
+  }
+}
