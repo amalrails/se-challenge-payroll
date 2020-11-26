@@ -1,0 +1,5 @@
+require 'rails_helper'
+
+RSpec.describe "pay_roll/generate_payroll_report.html.erb", type: :view do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
