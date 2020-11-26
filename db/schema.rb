@@ -29,8 +29,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_000136) do
   end
 
   create_table "time_report_records", force: :cascade do |t|
-    t.string "report_date"
-    t.string "datetime"
+    t.datetime "report_date"
     t.decimal "hours_worked", precision: 5, scale: 2
     t.integer "employee_id", null: false
     t.integer "job_group_id", null: false

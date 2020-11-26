@@ -1,5 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Employee, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Associations' do
+    it { should belong_to(:job_group) }
+    it { should have_many(:time_report_records) }
+  end
 end
