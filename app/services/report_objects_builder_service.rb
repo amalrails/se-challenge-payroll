@@ -26,12 +26,13 @@ class ReportObjectsBuilderService
 
   def add_values_to_object(records_end_date, start_date, rate, emp_id)
     while start_date < records_end_date
-      end_date = start_date + 2.weeks
+      end_date = start_date.day.eql?(1) ? start_date + 2.weeks : start_date.end_of_month
+
       time_records_for_pay_period = @employee_time_records.between_dates(start_date, end_date)
       total_working_hours = time_records_for_pay_period.sum(:hours_worked)
       if total_working_hours.positive?
-        @object << { employeeId: emp_id, payPeriod: { start_date: start_date.to_date,
-                                                      end_date: end_date.to_date },
+        @object << { employeeId: emp_id, payPeriod: { startDate: start_date.to_date,
+                                                      endDate: end_date.to_date },
                      amountPaid: "$#{total_working_hours * rate}" }
 
       end

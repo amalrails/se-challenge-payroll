@@ -21,26 +21,26 @@ class TimeReport < ApplicationRecord
 
     private
 
-    def sanitize(row)
-      { job_group: row['job group'].to_s, employee_id: row['employee id'].to_s,
-        date: row['date'].to_date, hours_worked: row['hours worked'].to_f }
-    end
+      def sanitize(row)
+        { job_group: row['job group'].to_s, employee_id: row['employee id'].to_s,
+          date: row['date'].to_date, hours_worked: row['hours worked'].to_f }
+      end
 
-    def get_job_group(job_group_name)
-      @job_group = JobGroup.find_by_group_name(job_group_name)
-    end
+      def get_job_group(job_group_name)
+        @job_group = JobGroup.find_by_group_name(job_group_name)
+      end
 
-    def get_employee(employee_id)
-      @employee = Employee.find_or_create_by!(employee_id: employee_id,
-                                              job_group_id: @job_group.id)
-    end
+      def get_employee(employee_id)
+        @employee = Employee.find_or_create_by!(employee_id: employee_id,
+                                                job_group_id: @job_group.id)
+      end
 
-    def create_time_report_record(record, time_report_id)
-      TimeReportRecord.create!(report_date: record[:date],
-                               hours_worked: record[:hours_worked].to_f,
-                               time_report_id: time_report_id,
-                               employee_id: @employee.id,
-                               job_group_id: @job_group.id)
-    end
+      def create_time_report_record(record, time_report_id)
+        TimeReportRecord.create!(report_date: record[:date],
+                                 hours_worked: record[:hours_worked].to_f,
+                                 time_report_id: time_report_id,
+                                 employee_id: @employee.id,
+                                 job_group_id: @job_group.id)
+      end
   end
 end

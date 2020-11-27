@@ -9,8 +9,6 @@ AllCops:
     - 'db/data_schema.rb'
     - vendor/bundle/**/*
     - spec/**/*
-  Style/Documentation:
-    Enabled: false
 
 # Prefer &&/|| over and/or.
 Style/AndOr:
@@ -122,9 +120,6 @@ Style/RedundantPercentQ:
 # Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
 Lint/RequireParentheses:
   Enabled: true
-
-Style/Documentation:
-  Enabled: false
 
 Style/RedundantReturn:
   Enabled: true

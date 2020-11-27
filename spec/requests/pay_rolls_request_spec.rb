@@ -3,24 +3,19 @@
 require 'rails_helper'
 
 RSpec.describe 'PayRolls', type: :request do
-
-  describe 'GET /home' do
-    it 'returns http success' do
-      get '/pay_rolls/home'
-      expect(response).to have_http_status(:success)
-    end
-  end
-
   describe 'POST /import' do
+
     it 'returns http success' do
-      post '/pay_rolls/import'
-      expect(response).to have_http_status(:success)
+      expect(TimeReport).to receive(:import!).with('foo.csv')
+      post '/pay_rolls/import', params: { file: 'foo.csv' }
+      expect(response).to have_http_status(302)
     end
   end
 
-  describe 'POST /generate_payroll_report' do
+  describe 'GET /fetch_payroll_report' do
     it 'returns http success' do
-      get '/pay_rolls/generate_payroll_report'
+      get '/pay_rolls/fetch_payroll_report.json'
+      expect(response.media_type).to eq "application/json"
       expect(response).to have_http_status(:success)
     end
   end
