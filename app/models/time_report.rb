@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: time_reports
+#
+#  id         :integer          not null, primary key
+#  name       :string(20)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 class TimeReport < ApplicationRecord
   has_many :time_report_records, dependent: :destroy
 

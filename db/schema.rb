@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_000136) do
+ActiveRecord::Schema.define(version: 2020_11_27_122338) do
 
   create_table "employees", force: :cascade do |t|
     t.string "employee_id", limit: 10
@@ -37,7 +37,9 @@ ActiveRecord::Schema.define(version: 2020_11_26_000136) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["employee_id"], name: "index_time_report_records_on_employee_id"
+    t.index ["hours_worked"], name: "index_time_report_records_on_hours_worked"
     t.index ["job_group_id"], name: "index_time_report_records_on_job_group_id"
+    t.index ["report_date"], name: "index_time_report_records_on_report_date"
     t.index ["time_report_id"], name: "index_time_report_records_on_time_report_id"
   end
 
