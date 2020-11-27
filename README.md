@@ -1,3 +1,25 @@
+# Wave Software Development Challenge
+
+Applicants for the Full-stack Developer role at Wave must
+complete the following challenge, and submit a solution prior to the onsite
+interview.
+
+The purpose of this exercise is to create something that we can work on
+together during the onsite. We do this so that you get a chance to collaborate
+with Wavers during the interview in a situation where you know something better
+than us (it's your code, after all!)
+
+There isn't a hard deadline for this exercise; take as long as you need to
+complete it. However, in terms of total time spent actively working on the
+challenge, we ask that you not spend more than a few hours, as we value your
+time and are happy to leave things open to discussion in the on-site interview.
+
+Please use whatever programming language and framework you feel the most
+comfortable with.
+
+Feel free to email [dev.careers@waveapps.com](dev.careers@waveapps.com) if you
+have any questions.
+
 ## Project Description
 
 Imagine that this is the early days of Wave's history, and that we are prototyping a new payroll system API. A front end (that hasn't been developed yet, but will likely be a single page application) is going to use our API to achieve two goals:
@@ -158,12 +180,18 @@ We've agreed to build an API with the following endpoints to serve HTTP requests
    }
    ```
 
+We consider ourselves to be language agnostic here at Wave, so feel free to use any combination of technologies you see fit to both meet the requirements and showcase your skills. We only ask that your submission:
+
+- Is easy to set up
+- Can run on either a Linux or Mac OS X developer machine
+- Does not require any non open-source software
+
 ### Documentation:
 
 Instructions on how to build/run your application
 
 Pre-requisites:
-1. latest version of git needs to be installed
+1. Latest version of git needs to be installed
 2. Bundler gem with version 2.1.2
 
 Run the following commands in your terminal:
@@ -184,3 +212,56 @@ Run the following commands in your terminal:
 1. Use the import option to import a csv data file
 1. Fetch the payroll report
    - go to http://localhost:3000/pay_rolls/fetch_payroll_report.json
+
+Answers:
+   - How did you test that your implementation was correct?
+   - I wrote unit tests and tested using rspec, i also verified the functionality of the app manually.
+
+   - If this application was destined for a production environment, what would you add or change?
+   - If it was for production env i would have added the following:
+     - Add request authentication and authorization(whitelist ip's, verify FQDN, API Key Authentication etc.)
+     - User authentication and authorization(to prevent any malicious uploads).
+     - Improve sanitization of imported data.
+     - Make import data as a background job.
+     - Use SSL
+     - Optional: Restructure the way data is fetched for the payroll report generation(to provide better performance with bigger data volume).
+
+
+   - What compromises did you have to make as a result of the time constraints of this challenge?
+   - I had to make the following compromises:
+     - Better design for the data models which can handle different types of reports(monthly, biweekly, quarterly etc), high volume of data and provide better performance for report generation.
+
+     ps: I tried implementing it but had to revert back half way. I can explain in detail if you consider me for next round. ;)
+
+     - User authentication and authorization.
+     - Handle same employee in multiple groups problem.
+     - Handle restricting to add same file_name properly(because though file name already exists in system, the latest upload can have different data's).
+     - Make import data as a background job.
+     - Index page for reports with pagination and search.
+     - Better UX/UI.
+     - Would have avoided the minor assumptions, that i had to make to avoid the delay in submission of this challenge(please check the Assumptions section).
+
+Assumptions:
+  1. If there are repeating employee_ids for same dates in multiple csv files, then it will get added in time_report_record table and in the report working hours for that date will be sum of all working hours.
+
+
+## Submission Instructions
+
+1. Clone the repository.
+1. Complete your project as described above within your local repository.
+1. Ensure everything you want to commit is committed.
+1. Create a git bundle: `git bundle create your_name.bundle --all`
+1. Email the bundle file to [dev.careers@waveapps.com](dev.careers@waveapps.com) and CC the recruiter you have been in contact with.
+
+## Evaluation
+
+Evaluation of your submission will be based on the following criteria.
+
+1. Did you follow the instructions for submission?
+1. Did you complete the steps outlined in the _Documentation_ section?
+1. Were models/entities and other components easily identifiable to the
+   reviewer?
+1. What design decisions did you make when designing your models/entities? Are
+   they explained?
+1. Did you separate any concerns in your application? Why or why not?
+1. Does your solution use appropriate data types for the problem as described?
