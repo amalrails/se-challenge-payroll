@@ -1,25 +1,3 @@
-# Wave Software Development Challenge
-
-Applicants for the Full-stack Developer role at Wave must
-complete the following challenge, and submit a solution prior to the onsite
-interview.
-
-The purpose of this exercise is to create something that we can work on
-together during the onsite. We do this so that you get a chance to collaborate
-with Wavers during the interview in a situation where you know something better
-than us (it's your code, after all!)
-
-There isn't a hard deadline for this exercise; take as long as you need to
-complete it. However, in terms of total time spent actively working on the
-challenge, we ask that you not spend more than a few hours, as we value your
-time and are happy to leave things open to discussion in the on-site interview.
-
-Please use whatever programming language and framework you feel the most
-comfortable with.
-
-Feel free to email [dev.careers@waveapps.com](dev.careers@waveapps.com) if you
-have any questions.
-
 ## Project Description
 
 Imagine that this is the early days of Wave's history, and that we are prototyping a new payroll system API. A front end (that hasn't been developed yet, but will likely be a single page application) is going to use our API to achieve two goals:
@@ -180,39 +158,29 @@ We've agreed to build an API with the following endpoints to serve HTTP requests
    }
    ```
 
-We consider ourselves to be language agnostic here at Wave, so feel free to use any combination of technologies you see fit to both meet the requirements and showcase your skills. We only ask that your submission:
-
-- Is easy to set up
-- Can run on either a Linux or Mac OS X developer machine
-- Does not require any non open-source software
-
 ### Documentation:
 
-Please commit the following to this `README.md`:
+Instructions on how to build/run your application
 
-1. Instructions on how to build/run your application
-1. Answers to the following questions:
-   - How did you test that your implementation was correct?
-   - If this application was destined for a production environment, what would you add or change?
-   - What compromises did you have to make as a result of the time constraints of this challenge?
+Pre-requisites:
+1. latest version of git needs to be installed
+2. Bundler gem with version 2.1.2
 
-## Submission Instructions
+Run the following commands in your terminal:
 
-1. Clone the repository.
-1. Complete your project as described above within your local repository.
-1. Ensure everything you want to commit is committed.
-1. Create a git bundle: `git bundle create your_name.bundle --all`
-1. Email the bundle file to [dev.careers@waveapps.com](dev.careers@waveapps.com) and CC the recruiter you have been in contact with.
-
-## Evaluation
-
-Evaluation of your submission will be based on the following criteria.
-
-1. Did you follow the instructions for submission?
-1. Did you complete the steps outlined in the _Documentation_ section?
-1. Were models/entities and other components easily identifiable to the
-   reviewer?
-1. What design decisions did you make when designing your models/entities? Are
-   they explained?
-1. Did you separate any concerns in your application? Why or why not?
-1. Does your solution use appropriate data types for the problem as described?
+1. git clone -b master /path/to/amal_subhash.bundle wave_payroll_app
+1. cd /path/to/wave_payroll_app
+1. rvm gemset create payroll_app
+1. rvm gemset use payroll_app
+1. Use rvm gemset list to verify (optional)
+1. bundle install
+1. Db-creation and migration:
+   - bundle exec rake db:create db:schema:load db:seed
+1. Running test-cases:
+   - bundle exec rspec --format documentation
+1. Starting the rails server
+   - rails s -p 3000 (or any port number)
+1. Open any browser and go to http://localhost:3000/
+1. Use the import option to import a csv data file
+1. Fetch the payroll report
+   - go to http://localhost:3000/pay_rolls/fetch_payroll_report.json

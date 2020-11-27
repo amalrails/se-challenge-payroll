@@ -61,7 +61,7 @@ RSpec.describe PayRollsController, type: :controller do
         post :import, params: { file: 'foo.csv' }
       end
 
-      context 'Valid file' do
+      context 'Invalid file' do
         it 'does not increment the TimeReportRecord count' do
           post :import, params: { file: file }
           expect { post :import, params: { file: file } }.to change { TimeReportRecord.count }.by(0)
