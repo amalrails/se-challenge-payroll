@@ -20,7 +20,7 @@ RSpec.describe 'PayRolls', type: :request do
 
   describe 'POST /generate_payroll_report' do
     it 'returns http success' do
-      post '/pay_rolls/generate_payroll_report'
+      get '/pay_rolls/generate_payroll_report'
       expect(response).to have_http_status(:success)
     end
   end

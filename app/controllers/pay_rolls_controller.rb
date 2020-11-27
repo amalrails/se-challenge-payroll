@@ -11,9 +11,7 @@ class PayRollsController < ApplicationController
     redirect_to root_url, notice: message
   end
 
-  def generate_payroll_report
-    @time_report_records = TimeReportRecord.all.order(:employee_id)
-    @employee_ids = @time_report_records.pluck(:employee_id).uniq
-    # render :file => 'generate_payroll_report.json.erb', :content_type => 'application/json'
+  def fetch_payroll_report
+    @payroll_report_object = ReportObjectsBuilderService.new.object
   end
 end

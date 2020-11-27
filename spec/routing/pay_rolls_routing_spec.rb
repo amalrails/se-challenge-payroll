@@ -11,7 +11,7 @@ RSpec.describe 'PayRollController', type: :routing do
       expect(post: 'pay_rolls/import').to route_to('pay_rolls#import')
     end
     it 'routes to #generate_payroll_report' do
-      expect(post: 'pay_rolls/generate_payroll_report').to route_to('pay_rolls#generate_payroll_report')
+      expect(get: 'pay_rolls/generate_payroll_report').to route_to('pay_rolls#generate_payroll_report')
     end
   end
 end
